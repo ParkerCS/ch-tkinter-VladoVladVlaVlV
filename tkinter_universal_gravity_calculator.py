@@ -62,7 +62,7 @@ class App():
 
     def concat(self,event):
         try:
-            self.grav.set(self.m1.get() * self.m2.get() / (self.r.get() * self.r.get()) * 0.0000000000667)
+            self.grav.set("{:.2e}".format(self.m1.get() * self.m2.get() / (self.r.get() * self.r.get()) * 0.0000000000667))
         except ZeroDivisionError:
             self.grav.set("Not divisible by 0")
         except:

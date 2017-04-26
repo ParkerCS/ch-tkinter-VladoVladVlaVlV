@@ -45,7 +45,7 @@ class App():
 
     def concat(self, event):
         answer_list=["Does not matter","Irrelevant","I do not care","Ehhh.... Whatever, Sure","No one cares","Leave me alone","Meh","Whatever","No.","Definitely No"]
-        self.answer.set("Answer: "+answer_list[random.randrange(0,9)])
+        self.answer.set("Answer: " + answer_list[random.randrange(9)])
 
 
     #def concat(self,event):
