@@ -17,7 +17,7 @@ from tkinter import font
 import random
 
 
-# noinspection PyBroadException
+
 class App():
 
 
@@ -37,24 +37,18 @@ class App():
         self.enter.grid(row=3, column=1,sticky="e"+"w")
 
         self.button = Label(master, text="ASK!", font=self.title_font,bg="black",fg="gold")
-        self.button.bind("<Button-1>", self.concat)
+        self.button.bind("<Button-1>", self.answergen)
         self.button.grid(row=3, column=2,sticky="e"+"w")
 
         self.answer_label = Label(master, textvariable=self.answer, font=self.new_font,fg="red", width=10, borderwidth=5)
         self.answer_label.grid(row=4, column=0,columnspan=3, sticky="w" + "e")
 
-    def concat(self, event):
+    def answergen(self, event):
         answer_list=["Does not matter","Irrelevant","I do not care","Ehhh.... Whatever, Sure","No one cares","Leave me alone","Meh","Whatever","No.","Definitely No"]
         self.answer.set("Answer: " + answer_list[random.randrange(9)])
 
 
-    #def concat(self,event):
-       # try:
-      #      self.grav.set(self.m1.get() * self.m2.get() / (self.r.get() * self.r.get()) * 0.0000000000667)
-      #  except ZeroDivisionError:
-      #      self.grav.set("Not divisible by 0")
-       # except:
-       #     self.grav.set("Type Error")
+
 if __name__ == "__main__":
     root = Tk()
     root.title("Question Genie(Magic 8-Ball")

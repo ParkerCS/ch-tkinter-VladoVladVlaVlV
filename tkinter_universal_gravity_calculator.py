@@ -55,12 +55,12 @@ class App():
         self.grav_button = Label(master, text="Calculate : ",font=self.title_font,pady=2,borderwidth=5,relief="raised",height=1,fg="White",bg="Black")
         self.grav_button.grid(row=5, column=1, sticky="e"+"w")
 
-        self.grav_button.bind("<Button-1>",self.concat)
+        self.grav_button.bind("<Button-1>",self.gravcalc)
 
         self.grav_label = Label(master, textvariable=self.grav, font=self.title_font, width=10, borderwidth=5,relief="raised",fg="Black",bg="Gold",justify=CENTER)
         self.grav_label.grid(row=5, column=2, sticky="w"+"e")
 
-    def concat(self,event):
+    def gravcalc(self,event):
         try:
             self.grav.set("{:.2e}".format(self.m1.get() * self.m2.get() / (self.r.get() * self.r.get()) * 0.0000000000667))
         except ZeroDivisionError:
